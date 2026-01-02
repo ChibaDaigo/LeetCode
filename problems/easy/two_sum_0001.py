@@ -8,16 +8,15 @@ class Solution:
         :rtype: List[int]
         """
 
-        length = len(nums)
         answer = {}
 
-        for i in range(length):
-            compl = target - nums[i]
+        for i, num in enumerate(nums):
+            compl = target - num
 
             if compl in answer:
                 return [answer[compl], i]
-            else:
-                answer[nums[i]] = i
+
+            answer[num] = i
 
         # length = len(nums)
 
